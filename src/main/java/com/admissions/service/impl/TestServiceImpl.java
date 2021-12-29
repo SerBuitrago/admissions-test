@@ -55,7 +55,7 @@ public class TestServiceImpl implements TestService{
 		test = !Admissions.isLong(test.getId()) ? saveToSave(test, type) : saveToUpdate(test, type);
 		test = testRepository.save(test);
 		if (test == null)
-			throw new AdmissionsException("No se ha podido " + message + " la categoria.");
+			throw new AdmissionsException("No se ha podido " + message + " la prueba.");
 		return test;
 	}
 

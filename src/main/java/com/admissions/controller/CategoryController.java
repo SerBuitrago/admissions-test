@@ -24,7 +24,6 @@ public class CategoryController {
 	@Autowired
 	CategoryService categoryService;
 	
-	
 	@GetMapping(value = { "/find/id/{id}", "/{id}" })
 	public ResponseEntity<Category> findById(@PathVariable("id") Long id) {
 		return ResponseEntity.status(HttpStatus.OK).body(categoryService.findById(id));

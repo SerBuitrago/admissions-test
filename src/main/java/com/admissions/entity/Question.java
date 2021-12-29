@@ -29,9 +29,6 @@ public class Question {
 	@Column(name="id_test", nullable =  false)
 	private Long idTest;
 	
-	@Column(name="name", nullable =  false, length = 200)
-	private String name;
-	
 	@Column(name="description", nullable =  false, length = 800)
 	private String description;
 	
