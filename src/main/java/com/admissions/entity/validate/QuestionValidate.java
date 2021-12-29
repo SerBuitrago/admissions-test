@@ -14,4 +14,11 @@ public class QuestionValidate {
 			throw new AdmissionsException("No se ha podido validar la descripcion de la pregunta.");
 		CategoryValidate.validateById(question.getCategory());
 	}
+	
+	public static void validateById(Question question) {
+		if(question == null)
+			throw new AdmissionsException("No se ha podido validar la pregunta.");
+		if(!Admissions.isLong(question.getId()))
+			throw new AdmissionsException("No se ha podido validar el id de la pregunta.");
+	}
 }

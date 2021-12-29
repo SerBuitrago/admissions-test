@@ -27,8 +27,8 @@ public class Option {
 	@JoinColumn(name = "id_question", nullable = false)
 	private Question question;
 	
-	@Column(name="name", nullable =  false, length = 200)
-	private String name;
+	@Column(name="description", nullable =  false, length = 800)
+	private String description;
 	
 	@Column(name = "statu", nullable = false, columnDefinition = "tinyint(1) default 0")
 	private boolean isCorrect;
