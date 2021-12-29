@@ -7,5 +7,6 @@ import com.admissions.entity.Test;
 
 @Repository
 public interface TestRepository extends JpaRepository<Test, Long>{
-
+	
+	Test findByName(String name);
 }

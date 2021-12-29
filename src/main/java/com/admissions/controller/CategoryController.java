@@ -1,5 +1,7 @@
 package com.admissions.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -29,27 +31,27 @@ public class CategoryController {
 	}
 
 	@GetMapping(value = { "/find/name/{name}" })
-	public ResponseEntity<?> findByName(@PathVariable("name") String name) {
+	public ResponseEntity<Category> findByName(@PathVariable("name") String name) {
 		return ResponseEntity.status(HttpStatus.OK).body(categoryService.findByName(name));
 	}
 
 	@GetMapping(value = {"", "/all"})
-	public ResponseEntity<?> findAll() {
+	public ResponseEntity<List<Category>> findAll() {
 		return ResponseEntity.status(HttpStatus.OK).body(categoryService.findAll());
 	}
 
 	@PostMapping
-	public ResponseEntity<?> save(@RequestBody Category category) {
+	public ResponseEntity<Category> save(@RequestBody Category category) {
 		return ResponseEntity.status(HttpStatus.OK).body(categoryService.save(category, 1));
 	}
 
 	@PutMapping
-	public ResponseEntity<?> update(@RequestBody Category category) {
+	public ResponseEntity<Category> update(@RequestBody Category category) {
 		return ResponseEntity.status(HttpStatus.OK).body(categoryService.save(category, 2));
 	}
 
 	@DeleteMapping(value = "/{id}")
-	public ResponseEntity<?> delete(@PathVariable("id") Long id) {
+	public ResponseEntity<Boolean> delete(@PathVariable("id") Long id) {
 		return ResponseEntity.status(HttpStatus.OK).body(categoryService.delete(id));
 	}
 }
