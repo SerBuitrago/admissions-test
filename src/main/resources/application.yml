@@ -12,3 +12,6 @@ spring:
     url: jdbc:mysql://localhost:3306/admissions?serverTimezone=America/Bogota&useSSL=false&useUnicode=true&characterEncoding=UTF-8&allowPublicKeyRetrieval=true
     username: root
     password: 
+admissions:
+  swagger:
+    controller: com.admissions.controller
